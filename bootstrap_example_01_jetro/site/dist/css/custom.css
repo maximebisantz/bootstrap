@@ -1,0 +1,9 @@
+/* Custom CSS -- */
+body {
+  background: url('../img/general/background.jpg') repeat top left;
+}
+#nav .logo {
+  background: url('../img/header/logo.png') no-repeat top left;
+  width: 87;
+  height: 34;
+}

@@ -1,0 +1,19 @@
+/* Custom CSS -- */
+
+
+@import '../mixins.less'; 
+ 
+@image_path : '../img';
+
+
+body{
+  background: url('@{image_path}/general/background.jpg') repeat top left;  
+}  
+
+// Header -- Logo & Navigation 
+#nav{
+  .logo{
+    background: url('@{image_path}/header/logo.png') no-repeat top left;
+    .size(87, 34);
+  }
+} 
