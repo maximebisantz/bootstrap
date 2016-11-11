@@ -1,19 +1,149 @@
 /* Custom CSS -- */
 
-
-@import '../mixins.less'; 
- 
 @image_path : '../img';
 
+@import '../mixins.less'; 
+@import '../variables.less';
+@import '_custom-variables.less';
+@import '_custom-mixins.less';
+ 
+@import '_custom-elements.less';
 
+
+// General 
+// to use on the content container where the body background is present on the sides.
+.borderedSection{
+  background: @color-main-alt;
+}
+.borderedContainer{
+  .box-sizing(padding-box);
+  border-right: 10px solid White;
+  border-left: 10px solid White;
+  background: @color-main;
+}
+.no-padding{
+  padding: 0 10px !important;
+  @media (min-width: @grid-float-breakpoint){
+    padding: 0 !important;
+  }
+}
+
+// Body 
 body{
   background: url('@{image_path}/general/background.jpg') repeat top left;  
 }  
 
-// Header -- Logo & Navigation 
-#nav{
-  .logo{
-    background: url('@{image_path}/header/logo.png') no-repeat top left;
-    .size(87, 34);
+// SECTION : Header -- Logo & Navigation 
+header{
+  .navbar{
+    background: transparent;
+    min-height: 78px;
+    padding-top: 22px;
+    border: 0;
+    margin: 0;
   }
-} 
+  .navbar-brand{
+    background: url('@{image_path}/header/logo.png') no-repeat center center;
+    .size(87px, 33px);
+    @media (max-width: @grid-float-breakpoint) {
+      margin-left: 10px;
+    }
+  }
+  .navbar-default .navbar-nav{
+    // for full-width nav: pull up the nav a little.
+    @media (min-width: @grid-float-breakpoint) {
+      margin-top: -10px;
+      margin-right: -30px;
+    }
+  }
+  .navbar-header .navbar-toggle{
+    margin-top: 0;
+  }
+}
+
+// SECTION : Main Title
+.main-title {
+  padding: 0;
+  min-height: 65px;
+}
+.borderedContainer{
+  min-height: 65px;
+}
+.main-title .container h1.main-title-header{
+  margin: 18px 0 0 0; 
+}
+
+// HOME : Carousel
+#home-carousel{
+    // put the carousel on top of the main title (home)
+    //top: -65px;
+    
+    // Define keyframe to animation the captions
+    .keyframes(carousel-caption;{
+      from {opacity: 0; }
+      to {opacity: 1; }
+    });
+    // Binds the animation
+   .active .carousel-caption{
+      //animate when active
+      animation-name: carousel-caption;
+      animation-duration: 2s;
+   }         
+    
+   // Define custom caption position per slide
+   #carousel-item-1 .carousel-caption{
+     left: 5%;
+     right: 60%;
+     bottom: 50px;
+   }
+   #carousel-item-2 .carousel-caption{
+     left: 5%;
+     right: 60%;
+     top: 20px;
+     bottom: auto;
+   }
+   #carousel-item-3 .carousel-caption{
+     left: 20%;
+     right: 20%;
+     top: 10px;
+     bottom: auto;
+   }
+   #carousel-item-4 .carousel-caption{    
+     left: 80%;
+     right: 1%;   
+     top: 30%;
+     bottom: auto;      
+   }
+   #carousel-item-5 .carousel-caption{    
+     left: 10%;
+     right: 10%;   
+     top: 50%;
+     bottom: auto;      
+   }
+   #carousel-item-6 .carousel-caption{    
+     left: 1%;
+     right: 1%;   
+     top: auto;
+     bottom: 10px;      
+   }
+  
+  // Carousel Loop to set the caption to full width and centered on small screen
+  .carousel-caption-loop (@i) when (@i > 0){
+    .carousel-caption-loop(@i - 1); // iteration i-1
+    #carousel-item-@{i} .carousel-caption{
+      @media (max-width: @screen-phone){
+        top: auto;
+        left: 20%;
+        right: 20%;
+        bottom: 20px;
+        text-align: center;
+        p{
+          display: none;
+        }
+      }
+    }
+  }
+  .carousel-caption-loop(6); // loop call
+}
+
+

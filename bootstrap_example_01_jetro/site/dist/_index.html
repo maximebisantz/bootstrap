@@ -13,10 +13,161 @@
 	</head>
 	<body>
 	
-		<h1>HELLO WORLD!</h1>
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<!-- Navbar Header -->
+					<div class="navbar-header">
+						<!-- Navbar Toggle Button -->
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+							<span class="sr-only">Toggle Navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Navbar Brand Logo/text -->
+						<a class="navbar-brand" href="#"><span class="sr-only">JETRO</span></a>
+					</div>
+					
+					<!-- Navbar Content -->
+					<div class="collapse navbar-collapse" id="main-nav">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Portfolio</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</nav>
+		</header>
+		
+		<main>
+			<!-- Main - PAGE TITLE + Background Container -->
+			<section class="main-title borderedSection">
+				<div class="container borderedContainer">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="main-title-header"><span class="sr-only">Home</span>HOME</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- END - Main PAGE TITLE -->
+			
+			<!-- HOME : Main : Slider -->
+			<section class="home-slider">
+				<div class="container no-padding">
+					<!-- Carousel -->
+					<div id="home-carousel" class="carousel slide" data-ride="">
+						<!-- Indicators -->						
+						<!-- >ol class="carousel-indicators">
+							<li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#home-carousel" data-slide-to="1" ></li>
+							<li data-target="#home-carousel" data-slide-to="2" ></li>
+							<li data-target="#home-carousel" data-slide-to="3" ></li>
+						</ol -->
+						<!-- Slides -->
+						<div class="carousel-inner" role="listbox">
+							
+							<!-- One Slide -->
+							<div id="carousel-item-1" class="item">
+								<img src="img/home/carousel-1.jpg" alt="happy animals" />
+								<div class="carousel-caption">
+									<h4>Happy Animals</h4>
+									<p>Lorem ipsum dolor sit amet, malorum recteque reprehendunt ea vel. Urbanitas adolescens vim te, per at tritani aperiri. Adhuc invenire convenire his ea.</p>
+								</div>
+							</div>
+							<!-- END One Slide -->
+							
+							<div id="carousel-item-2" class="item">
+								<img src="img/home/carousel-2.jpg" alt="super women" />
+								<div class="carousel-caption">
+									<h4>Super Women</h4>
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
+								</div>
+							</div>
+							<div id="carousel-item-3" class="item">
+								<img src="img/home/carousel-3.jpg" alt="DeadPool" />
+								<div class="carousel-caption">
+									<h4>Deadpool</h4>
+									<p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.</p>
+								</div>
+							</div>
+							<div id="carousel-item-4" class="item">
+								<img src="img/home/carousel-4.jpg" alt="Marvel" />
+								<div class="carousel-caption">
+									<h4>Marvel</h4>
+									<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The</p>
+								</div>
+							</div>
+							<div id="carousel-item-5" class="item">
+								<img src="img/home/carousel-5.jpg" alt="Marvel" />
+								<div class="carousel-caption">
+									<h4>Marvel Type</h4>
+									<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The</p>
+								</div>
+							</div>
+							<div id="carousel-item-6" class="item">
+								<img src="img/home/carousel-6.jpg" alt="Marvel" />
+								<div class="carousel-caption">
+									<h4>Another Marvel Story</h4>
+									<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The</p>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+						<!--  
+						<ol class="carousel-indicators">
+							<li data-target="#home-carousel" data-slide-to="0" class="active"><img src="img/home/carousel-1.jpg" alt="happy animals"/></li>
+							<li data-target="#home-carousel" data-slide-to="1" ><img src="img/home/carousel-2.jpg" alt="super women"/></li>
+							<li data-target="#home-carousel" data-slide-to="2" ><img src="img/home/carousel-3.jpg" alt="deadpool"/></li>
+							<li data-target="#home-carousel" data-slide-to="3" ><img src="img/home/carousel-4.jpg" alt="marvel"/></li>
+							<li data-target="#home-carousel" data-slide-to="4" ><img src="img/home/carousel-5.jpg" alt="marvel type"/></li>
+							<li data-target="#home-carousel" data-slide-to="5" ><img src="img/home/carousel-6.jpg" alt="another marvel story"/></li>
+						</ol>
+						-->
+						<div class="carousel-indicators">
+							<div class="row">
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item active" data-slide-to="0"><img src="img/home/carousel-1.jpg" alt="happy animals"/></div>
+								</div>
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item" data-slide-to="1" ><img src="img/home/carousel-2.jpg" alt="super women"/></div>
+								</div>
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item" data-slide-to="2" ><img src="img/home/carousel-3.jpg" alt="deadpool"/></div>
+								</div>
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item" data-slide-to="3" ><img src="img/home/carousel-4.jpg" alt="marvel"/></div>
+								</div>
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item" data-slide-to="4" ><img src="img/home/carousel-5.jpg" alt="marvel type"/></div>
+								</div>
+								<div class="col-xs-2">
+									<div data-target="#home-carousel" class="carousel-indicators-item" data-slide-to="5" ><img src="img/home/carousel-6.jpg" alt="another marvel story"/></div>
+								</div>
+							</div>
+						</div>
+					<!-- END Carousel -->
+
+				</div>
+				
+			</section>
+			<!-- END Home : Main: Slider -->
+		
+		</main>	
+		
+		
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/custom.js"></script>
+		
+		<script src="http://localhost:35729/livereload.js"></script>
 	
 	</body>
 </html>

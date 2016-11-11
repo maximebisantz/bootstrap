@@ -3,6 +3,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
+	
 	grunt.initConfig({
 		
 		less: {
@@ -24,12 +25,25 @@ module.exports = function(grunt){
 		},
 		watch: {
 			less_custom : {
-				files: ['less/custom/custom.less'],
-				tasks: 'less:custom'
+				files: ['less/custom/*.less'],
+				tasks: 'less:custom',
+				options:{
+					spawn: true,
+					livereload: true
+				}
 			},
 			less_bootstrap: {
-				files: ['less/**/*.less', '!less/custom/custom.less'],
-				tasks: 'less:bootstrap'
+				files: ['less/**/*.less', '!less/custom/**/*.less'],
+				tasks: 'less:bootstrap',
+				options:{
+					spawn: true
+				}
+			},
+			distribution : {
+				files: ['dist/**/*.html', 'dist/**/*.js'],
+				options: {
+					livereload: true
+				}
 			}
 			
 		}

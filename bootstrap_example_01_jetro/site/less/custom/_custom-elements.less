@@ -1,0 +1,137 @@
+/** CUSTOM Elements **/
+  
+/* NAVBAR -- top nav */
+.navbar-default .navbar-toggle{
+  border: none;
+  background: @color-main;
+  &:hover, &:focus{
+    background: @color-gray-main;
+  }
+  .icon-bar{
+    background: White;
+  }
+}
+.navbar-default{
+  background: red;
+  
+}
+.navbar-default .navbar-nav{
+  li{
+    &.active{
+       a{
+        &, &:hover, &:focus{
+        color: @color-main;
+        background: none;
+        }
+      }
+    }
+    &:last-child a{
+      padding-right: 0;
+    }
+    a{
+      font-family: @nav-bar-font-family;
+      color: @color-gray-main;
+      font-size: @font-size-custom-medium;
+      &:hover, &:focus, &.active{
+        color: @color-main;
+      }
+    }
+  }
+}
+
+/* HEADERs */
+h1{
+  font-family: @font-family-alt;
+  font-size: @font-size-h3;
+  color: White;
+}
+
+
+/* CAROUSEL */
+.carousel{
+  // set the item to be max fixed height. Cause the carousel to keep the same size with different images.
+  //height: 400px;  
+  margin-bottom: @padding-large-horizontal;
+  
+  .item{
+    max-height: 400px;
+    overflow: hidden;
+  }
+  &-caption{
+    background: fadeout(@color-main, 20%); 
+    text-align: left;
+    padding: 20px 18px 0 18px; 
+    h4{
+      font-family: @font-family-alt;
+      padding: 0;
+      margin:0 0 20px 0;
+    }
+    p{
+      padding: 0;
+      margin: 0 0 20px 0;
+      font-size: @font-size-small;   
+    }
+  }
+  &-indicators{
+    bottom: 0;
+    margin-bottom: 0;
+  }
+  // add a transition effect on the caption
+  .item .carousel-caption{
+    opacity: 0;
+    //transition: opacity 1.5s;
+  }
+  .active .carousel-caption{
+    opacity: 1;
+  }
+
+}
+
+//CAROUSEL : Indicators
+.carousel-indicators{
+  margin:0;
+  left: auto;
+  width: 100%;
+  position: relative;
+  
+  [class*="col"]{
+    //.debug(purple);
+    //padding: 0;
+  }
+  
+  & div.carousel-indicators-item, & div.active{
+    //height: 100px;
+    width: auto;
+    //max-height: 100px;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-indent: 0;
+    border-radius: 0;
+    cursor: pointer;
+    text-align: center !important;
+    margin: 0 auto !important;
+    @media (max-width: @screen-xs){
+      height: 20px !important; 
+    }
+    @media (max-width: @screen-md) and (min-width : @screen-xs ){
+      height: 50px !important;
+    }
+    @media (min-width: @screen-md){
+      height: 130px !important;
+    }
+    
+    img{
+      .size(auto, 100%);
+      //margin: 0 auto;
+    }
+    
+  }
+  div.active img{
+    border: 3px solid @color-main;
+  }
+}
+
+
+
+
