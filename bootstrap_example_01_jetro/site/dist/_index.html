@@ -30,7 +30,7 @@
 					</div>
 					
 					<!-- Navbar Content -->
-					<div class="collapse navbar-collapse" id="main-nav">
+					<div  class="collapse navbar-collapse" id="main-nav">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
 							<li><a href="#">About us</a></li>
@@ -44,13 +44,14 @@
 			</nav>
 		</header>
 		
-		<main>
+		<main id="home">
 			<!-- Main - PAGE TITLE + Background Container -->
 			<section class="main-title borderedSection">
 				<div class="container borderedContainer">
 					<div class="row">
 						<div class="col-sm-12">
-							<h1 class="main-title-header"><span class="sr-only">Home</span>HOME</h1>
+							<!-- Only on HOME : hide the header to position carousel-->
+							<h1 class="main-title-header sr-only"><span class="sr-only">Home</span>HOME</h1>
 						</div>
 					</div>
 				</div>
@@ -61,6 +62,7 @@
 			<section class="home-slider">
 				<div class="container no-padding">
 					<!-- Carousel -->
+					<div id="carousel-container">
 					<div id="home-carousel" class="carousel slide" data-ride="">
 						<!-- Indicators -->						
 						<!-- >ol class="carousel-indicators">
@@ -117,8 +119,19 @@
 									<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The</p>
 								</div>
 							</div>
-						
 						</div>
+						
+						<!-- CAROUSEL : Controls -->
+						<a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a> 
+						<a class="right carousel-control" href="#home-carousel" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a> 
+						<!-- END OF : CAROUSEL : Controls -->
+						
 					</div>
 						<!--  
 						<ol class="carousel-indicators">
@@ -153,11 +166,167 @@
 							</div>
 						</div>
 					<!-- END Carousel -->
-
+					</div>
 				</div>
 				
 			</section>
 			<!-- END Home : Main: Slider -->
+			
+			<!-- HOME ARTICLES -->
+			<section id="home-articles">
+				<div class="container no-padding">
+					<div class="row">
+						<!-- ARTICLE -->
+						<article id="home-article-1" class="col-sm-4">
+							<div class="article-content">
+								<h4>check out my latest <span>portfolio items</span></h4>
+								<p>Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posue re ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis. Aenean sodales nibh non lectus tempor a interdum justo ultricies.</p>
+							
+								<!-- MODAL : controller -->
+								<button type="button" class="btn btn-primary-target btn-lg" data-toggle="modal" data-target="#article-1-more">
+									More
+								</button>
+								<!-- END OF MODAL : controller -->
+							</div>
+							<!-- MODAL : Content -->
+							<div class="modal fade" id="article-1-more" tabindex="-1" role="dialog" aria-labelledby="article-1-more-label">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="article-1-more-label">check out my latest <span>portfolio items</span></h4>
+										</div>
+										<div class="modal-body">
+											<p>Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posue re ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis. Aenean sodales nibh non lectus tempor a interdum justo ultricies.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END OF MODAL : Content -->
+						</article>
+						<article id="home-article-2" class="col-sm-4">
+							<div class="article-content">
+								<h4>Offer  Top  Notch  Quality<span>Work  &  Services</span></h4>
+								<p>Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posue re ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis. Aenean sodales nibh non lectus tempor a interdum justo ultricies.</p>
+								<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#article-2-more">
+									More
+								</button>
+							</div>
+							<div class="modal fade" id="article-2-more" tabindex="-1" role="dialog" aria-labelledby="article-2-more-label">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="article-2-more-label">Offer  Top  Notch  Quality<span>Work  &  Services</span></h4>
+										</div>
+										<div class="modal-body">
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article id="home-article-3" class="col-sm-4">
+							<div class="article-content">
+								<h4>Follow  Me  on  Twitter, <span>Facebook  &  Pinterest</span></h4>
+								<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+								<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#article-3-more">
+									More
+								</button>
+							</div>
+							<div class="modal fade" id="article-3-more" tabindex="-1" role="dialog" aria-labelledby="article-3-more-label">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="article-3-more-label">Follow  Me  on  Twitter, <span>Facebook  &  Pinterest</span></h4>
+										</div>
+										<div class="modal-body">
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+											<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<!-- END HOME ARTICLES -->
+			
+			<section id="home-recentWorks">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-xs-12">
+							<h4 class="section-title"><span>Recent Works</span></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3 col-xs-6">
+							<div class="recentwork">
+								<img src="img/home/recent-1.jpg"/>
+								<div class="recentwork-content">
+									<h5>Character  Design</h5>
+									<p>June 15, 2012</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-6">
+							<div class="recentwork">
+								<img src="img/home/recent-2.jpg"/>
+								<div class="recentwork-content">
+									<h5>Brochure  Design</h5>
+									<p>June 15, 2012</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Wrap helper to avoid overlaping in small screen -->
+						<div class="clearfix visible-xs-block"></div>
+						
+						<div class="col-sm-3 col-xs-6">
+							<div class="recentwork">
+								<img src="img/home/recent-3.jpg"/>
+								<div class="recentwork-content">
+									<h5>Social Media Buttons</h5>
+									<p>June 15, 2012</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-6">
+							<div class="recentwork">
+								<img src="img/home/recent-4.jpg"/>
+								<div class="recentwork-content">
+									<h5>10 Amazing Websites</h5>
+									<p>June 15, 2012</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		
 		</main>	
 		

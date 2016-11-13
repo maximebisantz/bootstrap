@@ -1,7 +1,4 @@
 /* Custom CSS -- */
-
-@image_path : '../img';
-
 @import '../mixins.less'; 
 @import '../variables.less';
 @import '_custom-variables.less';
@@ -27,6 +24,12 @@
     padding: 0 !important;
   }
 }
+h1, h2, h3, h4, h5, h6{
+  font-family: @font-family-alt;
+}
+p{
+  color: @color-grey-text;
+}
 
 // Body 
 body{
@@ -39,7 +42,7 @@ header{
     background: transparent;
     min-height: 78px;
     padding-top: 22px;
-    border: 0;
+    border: 0; 
     margin: 0;
   }
   .navbar-brand{
@@ -53,7 +56,7 @@ header{
     // for full-width nav: pull up the nav a little.
     @media (min-width: @grid-float-breakpoint) {
       margin-top: -10px;
-      margin-right: -30px;
+      margin-right: -(@grid-gutter-width);
     }
   }
   .navbar-header .navbar-toggle{
@@ -73,10 +76,19 @@ header{
   margin: 18px 0 0 0; 
 }
 
+// Fix the HOME page where the title is completly hidden
+#home .main-title .col-sm-12{
+  min-height: 0;
+}
+
 // HOME : Carousel
+.home-slider{ // <section> containing the whole carousel.
+  position: relative;
+  margin-top: -65px;
+  padding-bottom: 30px;
+}
 #home-carousel{
     // put the carousel on top of the main title (home)
-    //top: -65px;
     
     // Define keyframe to animation the captions
     .keyframes(carousel-caption;{
@@ -89,7 +101,7 @@ header{
       animation-name: carousel-caption;
       animation-duration: 2s;
    }         
-    
+
    // Define custom caption position per slide
    #carousel-item-1 .carousel-caption{
      left: 5%;
@@ -146,4 +158,46 @@ header{
   .carousel-caption-loop(6); // loop call
 }
 
+// HOME : Articles
+#home-articles{
+  position: relative;
+  padding: 0;
+}
+// loop through 1 to 3 for icons background
+.homeArticle-loop(@counter) when (@counter > 0){
+  .homeArticle-loop(@counter - 1);
+  #home-article-@{counter} .article-content h4{
+    .background(
+      image, url('@{image_path}/home/icon-article-@{counter}.jpg');
+    )
+  }
+}
+.homeArticle-loop(3);  
+
+// Display a separator line for small screen.
+#home-articles article .article-content{
+  @media(max-width: @grid-float-breakpoint){
+    .background(
+      image, url('@{image_path}/general/line.jpg');
+      repeat, repeat-x;
+      position, bottom left;
+    );
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    
+    &:last-child{
+      background: none;
+    }
+  }
+}
+#home-articles article:last-child .article-content{
+  @media(max-width: @grid-float-breakpoint){
+    background: none;
+    margin-bottom: 0;
+  }
+}
+
+// HOME : Recent Works
+#home-recentWorks{
+}
 

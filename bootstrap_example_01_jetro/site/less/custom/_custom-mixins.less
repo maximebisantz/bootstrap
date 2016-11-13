@@ -47,4 +47,39 @@
  animation-timing-function  : @timing;
 }
 
+// BACKGROUND Mixin.
+.background(@argument; @rest...){
+
+  @countArgs : length(@rest);
+  @TotalArguments: length(@arguments);
+
+  // First agrument
+  @_property : extract(@argument, 1);
+  @_value : extract(@argument, 2);
+
+  background-@{_property} : @_value;
+  
+  // Two arguments 
+  & when (@TotalArguments = 2) and (@countArgs > 0){
+    @_property : extract(@rest, 1);
+    @_value : extract(@rest, 2);
+  
+    background-@{_property} : @_value;
+  }
+
+  // IF there's more than two argument list.
+  & when (@TotalArguments > 2){
+    .loop(@counter) when (@counter > 0){
+      .loop((@counter - 1));
+      
+      @argument  : extract(@rest, @counter);
+      @_property : extract(@argument, 1);
+      @_value    : extract(@argument, 2);
+      
+      background-@{_property} : @_value; 
+    }
+    .loop(@countArgs);
+    
+  }
+}
 

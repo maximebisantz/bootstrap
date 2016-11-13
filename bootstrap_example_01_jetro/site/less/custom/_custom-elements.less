@@ -45,7 +45,53 @@ h1{
   font-size: @font-size-h3;
   color: White;
 }
-
+// Main title size across the site.
+h4{
+  color: @color-main; 
+}
+.section-title{
+  .background(
+    image, url('@{image_path}/general/line.jpg');
+    position, 0 5px;
+    repeat, repeat-x;
+  );
+  padding:3px 0;
+  margin-top: 0;
+  span{
+    background: White;
+    padding-right: 20px;
+  }
+}
+h5{
+  font-size: @font-size-custom-medium;
+  color: @color-gray-main;
+}
+// General Styles
+/* BUTTONS */
+.btn, .btn:focus{
+  border-radius: 0;
+  background: @color-main;
+  color: White;
+  font-family: @font-family-alt;
+  font-size: @font-size-small;
+  padding: 5px 15px 7px 15px;
+}
+/* MODALS */
+.modal{
+  .modal-dialog{
+    .modal-content{
+      border-radius: 0;
+    }
+    .modal-header{
+      background: @color-main;
+      h4{
+        color: White;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
 
 /* CAROUSEL */
 .carousel{
@@ -65,11 +111,13 @@ h1{
       font-family: @font-family-alt;
       padding: 0;
       margin:0 0 20px 0;
+      color: White;
     }
     p{
       padding: 0;
       margin: 0 0 20px 0;
       font-size: @font-size-small;   
+      color: White;
     }
   }
   &-indicators{
@@ -94,14 +142,9 @@ h1{
   width: 100%;
   position: relative;
   
-  [class*="col"]{
-    //.debug(purple);
-    //padding: 0;
-  }
-  
   & div.carousel-indicators-item, & div.active{
     //height: 100px;
-    width: auto;
+    width: 100%;
     //max-height: 100px;
     overflow: hidden;
     padding: 0 !important;
@@ -111,8 +154,10 @@ h1{
     cursor: pointer;
     text-align: center !important;
     margin: 0 auto !important;
+    
+    
     @media (max-width: @screen-xs){
-      height: 20px !important; 
+      height: 30px !important; 
     }
     @media (max-width: @screen-md) and (min-width : @screen-xs ){
       height: 50px !important;
@@ -122,16 +167,106 @@ h1{
     }
     
     img{
-      .size(auto, 100%);
-      //margin: 0 auto;
+      .size(100%, 100%);
     }
     
   }
-  div.active img{
+  div.active{
     border: 3px solid @color-main;
   }
 }
 
+// CAROUSEL : Controls
+.carousel{
+  .carousel-control{
+    span{
+      top: 40%;
+      height: 52px;
+      width: 50px;
+      
+      font-size: 3em;
+      line-height: 0.8em;
+    }
+    &.left{
+      span{
+        left: 20%;
+      }
+    }
+    &.right{
+      span{
+        right: 30%;
+      }
+    }
+  }
+}
+
+/* HOME ARTICLES */
+#home-articles article .article-content{
+  h4{
+    padding-left: 70px;
+    line-height: @line-height-header;
+    margin-bottom: 35px;
+    margin: 0 0 35px 0;
+    .background(
+      color, transparent; 
+      position, 0 5px;
+      repeat, no-repeat;
+    );
+
+    @media (max-width: @grid-float-breakpoint){
+      margin-bottom: 15px;
+    };
+    span{
+      display: block;
+    }
+  }
+  p{
+    font-size: @font-size-small;
+    line-height: @line-height-text;
+    margin-bottom: 20px;
+  }
+  button{
+    margin-bottom: 35px;
+    @media(max-width: @grid-float-breakpoint){
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* HOME : Recent works */
+#home-recentWorks{
+  img{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .recentwork-content{
+    border: 1px solid @color-gray-main;
+    border-top: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    h5{
+      margin-bottom: 3px;
+      margin-top: 0;
+    }
+    p{
+      font-family: @font-family-alt;
+      font-size: @font-size-custom-small;
+      color: @color-main;
+    }
+  }
+  // resize each box for smaller screens.
+  .recentwork{
+    @media(max-width: @screen-sm){
+      width: 200px;
+    }
+    @media(max-width: @screen-xs){
+      width: 120px;
+    }
+  }
+  
+}
 
 
 
