@@ -199,5 +199,30 @@ header{
 
 // HOME : Recent Works
 #home-recentWorks{
+  margin-bottom: 28px;
 }
+
+// FOOTER
+footer .footer-section-container{
+  padding-left: 40px;
+  margin-top: 30px;
+}
+
+footer .footer-social{
+  margin-bottom: 20px;
+  .clearfix();
+}
+
+// Assign images to social links
+@social-link : facebook, twitter, email, rss, vimeo;
+
+.social-loop(@i: length(@social-link)) when (@i > 0){
+  .social-loop(@i - 1);
+  @link : extract(@social-link, @i);
+  #footer-@{link}{
+    background-image: url('@{image_path}/footer/@{link}.png');
+  }
+}
+.social-loop();
+
 
